@@ -1,0 +1,21 @@
+%html
+%head
+  %title Orders
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+%body
+  %header
+    .header_inner
+      = link_to "Orders", root_path, id: "logo"
+
+      %nav 
+        = link_to "Create new Order", new_order_path
+        = link_to "Create new Batch", new_batch_path
+        = link_to "Search for your Order", orders_path
+        = link_to "See all Batches", batches_path
+        = link_to "Search for Purchase Channel", purchase_channel_index_path
+
+%p.notice= notice
+%p.alert= alert
+
+= yield

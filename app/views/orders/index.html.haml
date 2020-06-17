@@ -1,0 +1,15 @@
+%h1 Search for your order
+%h4 Search by your name or by the order's reference
+
+= form_tag orders_path, method: 'get' do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search", :name => nil
+
+
+
+  - if @orders.present?
+    = @orders.each do |order|
+      %h2= link_to order.reference, order
+      %p= time_ago_in_words(order.created_at)
+      %p= truncate(order.purchaseChannel, length:50)
+

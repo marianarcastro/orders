@@ -1,0 +1,7 @@
+%h1 Search for your batch
+
+- if @batches.present?
+  = @batches.each do |batch|
+    %h2= link_to batch.reference, batch
+    %p= truncate(batch.purchaseChannel, length:50)
+

@@ -1,0 +1,10 @@
+%h1 Purchase Channel
+%text= "Purchase Channel:"
+%h4= @purchaseChannel.purchaseChannel
+
+- if @purchaseChannel.present?
+    - @orders.each do |orders|
+        %text= "Order's Reference:"
+        %h4= orders.reference
+        %text= "Order's Status:"
+        %h4= orders.status

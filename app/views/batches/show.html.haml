@@ -1,0 +1,10 @@
+%h1= Batch
+%h1= Batch
+%text= "Reference:"
+%h4= @batch.reference
+%text= "Purchase Channel:"
+%h4= @batch.purchaseChannel
+
+- @orders.each do |order|
+    %text= "Order's reference:"
+    %h4= order.reference

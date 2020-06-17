@@ -1,0 +1,15 @@
+%h1 Search for your Purchase Channel
+%h1 Search for your Purchase Channel
+%h4 Search by the name
+
+= form_tag purchase_channel_index_path, method: 'get' do
+  = text_field_tag :search, params[:search]
+  = select_tag :status, options_for_select([['ready', 'ready'], ['production', 'production']], params[:status])
+  = submit_tag "Search", :name => nil
+
+
+
+  - if @purchaseChannel.present?
+    = @purchaseChannel.each do |channel|
+      %h2= link_to channel.purchaseChannel, channel
+
